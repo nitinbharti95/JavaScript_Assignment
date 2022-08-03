@@ -1,5 +1,5 @@
 
-//Battleship Game
+//Battleship Game: 1st way of coding
 function battleship(){
 let a=[0,1,1,0,1]
 let guess=0
@@ -26,6 +26,32 @@ while (true){
     }
 }
 }
+
+//Battleship Game: 2nd way of coding
+function battleship2(){
+    const locations=[0,1,1,0,1]
+    let hit=0
+    let guess=0
+while(hit !=3){
+    const choice=Number(prompt("Enter the number from 1 to 5"))
+    if(choice < 1 || choice > 5){
+        alert("Enter the valid number!!!")
+        continue
+    }
+    guess++
+    if (locations[choice - 1] == 1){
+        alert("you hit a battleship")
+        hit++
+        locations[choice - 1] = 2
+    }else if(locations[choice - 1] == 2){
+        alert("you have already this battleship!")
+    } else{
+        alert("you missed the battleship")
+    }
+    alert("Your Total Guess is: " + guess)     
+}
+}
+
 
 //Button Toggle Function
 function buttonToggle()
